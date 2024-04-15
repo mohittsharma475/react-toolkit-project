@@ -2,7 +2,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchProduct } from "./productSlice";
 import { useEffect } from "react";
 import styles from "./Product.module.css";
-import { addAsync} from "../cart/cartSlice";
+import { addAsync } from "../cart/cartSlice";
+
 const Product = () => {
   const products = useSelector((state) => state.product.products);
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ const Product = () => {
     setTimeout(() => {
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          console.log("Location allowed",position)
+          console.log("Location allowed", position)
         },
         (error) => {
           console.error("Error getting geolocation:", error);
