@@ -1,0 +1,26 @@
+/* cart.module.css */
+
+.cart-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+  }
+  
+  .cart-item-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cart-item-details img {
+    width: 100px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+    object-fit: cover; /* Ensures the image maintains its aspect ratio */
+    margin-right: 20px; /* Add margin to the right of the image */
+  }
+  
+  .cart-item-details p {
+    margin: 5px 0;
+  }
+  
