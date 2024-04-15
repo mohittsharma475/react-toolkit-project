@@ -26,7 +26,7 @@ export const deleteAsync = createAsyncThunk("cart/deleteItem", async (id) => {
   const response = await deleteItems(id);
   return response.data.id;
 });
-export const UpdateAsync = createAsyncThunk("cart/updateItem", async (id,change) => {
+export const updateAsync = createAsyncThunk("cart/updateItem", async ({id,change}) => {
   const response = await updateItems(id,change);
   return response.data;
 });
@@ -52,6 +52,12 @@ export const cartSlice = createSlice({
           (item) => item.id === action.payload
         );
         state.items.splice(index, 1);
+      })
+      .addCase(updateAsync.fulfilled, (state, action) => {
+        const index = state.items.findIndex(
+          (item) => item.id === action.payload.id
+        );
+        state.items.splice(index, 1,action.payload);
       });
   },
 });
